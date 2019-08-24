@@ -3,7 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29025.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeignLanguageCenterPLC", "ForeignLanguageCenterPLC\ForeignLanguageCenterPLC.csproj", "{435BBAF4-F723-46F7-9874-9B50FDFB69EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ForeignLanguageCenterPLC", "ForeignLanguageCenterPLC\ForeignLanguageCenterPLC.csproj", "{435BBAF4-F723-46F7-9874-9B50FDFB69EC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentation", "1.Presentation", "{881D46A6-18A8-4859-95D4-DABA786CD71E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Application", "2.Application", "{EF43479E-9897-4B82-B14F-56EED2EF9165}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Domain", "3.Domain", "{5C0A1217-A423-47CE-903A-98456F3DF198}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.Infrastructure", "4.Infrastructure", "{11A4FA17-9AF8-4FC7-B6E7-43BC2463A07F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeignLanguageCenterPLC.Application", "ForeignLanguageCenterPLC.Application\ForeignLanguageCenterPLC.Application.csproj", "{0D4A1477-74EA-4107-B655-2C7C9FDF9D20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeignLanguageCenterPLC.Data", "ForeignLanguageCenterPLC.Data\ForeignLanguageCenterPLC.Data.csproj", "{1AAB2F0E-1809-41FF-B345-868F6435FD50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeignLanguageCenterPLC.Data.EF", "ForeignLanguageCenterPLC.Data.EF\ForeignLanguageCenterPLC.Data.EF.csproj", "{77A7C5C8-7E5B-44FB-BB88-D7A61F9F399E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeignLanguageCenterPLC.Infrastructure", "ForeignLanguageCenterPLC.Infrastructure\ForeignLanguageCenterPLC.Infrastructure.csproj", "{AC92314D-3F8A-46E0-923A-F3E0A4FD8163}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForeignLanguageCenterPLC.Utilities", "ForeignLanguageCenterPLC.Utilities\ForeignLanguageCenterPLC.Utilities.csproj", "{FB9EB9A1-34DC-49A2-9096-B0268A0E1354}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +33,37 @@ Global
 		{435BBAF4-F723-46F7-9874-9B50FDFB69EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{435BBAF4-F723-46F7-9874-9B50FDFB69EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{435BBAF4-F723-46F7-9874-9B50FDFB69EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D4A1477-74EA-4107-B655-2C7C9FDF9D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D4A1477-74EA-4107-B655-2C7C9FDF9D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D4A1477-74EA-4107-B655-2C7C9FDF9D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D4A1477-74EA-4107-B655-2C7C9FDF9D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AAB2F0E-1809-41FF-B345-868F6435FD50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AAB2F0E-1809-41FF-B345-868F6435FD50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AAB2F0E-1809-41FF-B345-868F6435FD50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AAB2F0E-1809-41FF-B345-868F6435FD50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77A7C5C8-7E5B-44FB-BB88-D7A61F9F399E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77A7C5C8-7E5B-44FB-BB88-D7A61F9F399E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77A7C5C8-7E5B-44FB-BB88-D7A61F9F399E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77A7C5C8-7E5B-44FB-BB88-D7A61F9F399E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC92314D-3F8A-46E0-923A-F3E0A4FD8163}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC92314D-3F8A-46E0-923A-F3E0A4FD8163}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC92314D-3F8A-46E0-923A-F3E0A4FD8163}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC92314D-3F8A-46E0-923A-F3E0A4FD8163}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9EB9A1-34DC-49A2-9096-B0268A0E1354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9EB9A1-34DC-49A2-9096-B0268A0E1354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9EB9A1-34DC-49A2-9096-B0268A0E1354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9EB9A1-34DC-49A2-9096-B0268A0E1354}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{435BBAF4-F723-46F7-9874-9B50FDFB69EC} = {881D46A6-18A8-4859-95D4-DABA786CD71E}
+		{0D4A1477-74EA-4107-B655-2C7C9FDF9D20} = {EF43479E-9897-4B82-B14F-56EED2EF9165}
+		{1AAB2F0E-1809-41FF-B345-868F6435FD50} = {5C0A1217-A423-47CE-903A-98456F3DF198}
+		{77A7C5C8-7E5B-44FB-BB88-D7A61F9F399E} = {5C0A1217-A423-47CE-903A-98456F3DF198}
+		{AC92314D-3F8A-46E0-923A-F3E0A4FD8163} = {11A4FA17-9AF8-4FC7-B6E7-43BC2463A07F}
+		{FB9EB9A1-34DC-49A2-9096-B0268A0E1354} = {11A4FA17-9AF8-4FC7-B6E7-43BC2463A07F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9E434FD0-C7CF-4F6C-8BAD-3E249433BDE8}
