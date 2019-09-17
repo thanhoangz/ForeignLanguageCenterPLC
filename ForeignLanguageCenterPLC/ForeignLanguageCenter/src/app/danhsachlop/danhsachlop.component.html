@@ -1,0 +1,81 @@
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>
+                    Danh sách lớp
+                    <small>new</small>
+                </h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item active">Navbar & Tabs</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <!-- /.card -->
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h3 class="card-title">
+                    <i class="fas fa-edit"></i>
+                    Danh sách lớp
+                </h3>
+            </div>
+            <div class="card-body">
+                <h4 class="mt-5 "></h4>
+                <ul class="nav nav-tabs" id="custom-content-above-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="custom-content-above-home-tab" data-toggle="pill"
+                            href="#custom-content-above-home" role="tab" aria-controls="custom-content-above-home"
+                            aria-selected="true">Ielts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-content-above-profile-tab" data-toggle="pill"
+                            href="#custom-content-above-profile" role="tab" aria-controls="custom-content-above-profile"
+                            aria-selected="false">Toiec</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-content-above-messages-tab" data-toggle="pill"
+                            href="#custom-content-above-messages" role="tab"
+                            aria-controls="custom-content-above-messages" aria-selected="false">Toefl</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="custom-content-above-settings-tab" data-toggle="pill"
+                            href="#custom-content-above-settings" role="tab"
+                            aria-controls="custom-content-above-settings" aria-selected="false">A</a>
+                    </li>
+                </ul>
+                <div class="tab-custom-content">
+                    <p class="lead mb-0">Chọn lớp</p>
+                </div>
+                <div class="tab-content" id="custom-content-above-tabContent">
+                    <div class="tab-pane fade show active" id="custom-content-above-home" role="tabpanel"
+                        aria-labelledby="custom-content-above-home-tab">
+                        <app-lop></app-lop>
+                    </div>
+                    <div class="tab-pane fade" id="custom-content-above-profile" role="tabpanel" aria-labelledby="custom-content-above-settings-tab">
+                        <app-lop></app-lop>
+                    </div>
+                    <div class="tab-pane fade" id="custom-content-above-messages" role="tabpanel"aria-labelledby="custom-content-above-settings-tab">
+                        <app-lop></app-lop>
+                    </div>
+                    <div class="tab-pane fade" id="custom-content-above-settings" role="tabpanel"aria-labelledby="custom-content-above-settings-tab">
+                        <app-lop></app-lop>
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
