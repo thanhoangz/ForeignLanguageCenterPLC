@@ -84,10 +84,12 @@ namespace ForeignLanguageCenterPLC
                 options.AddPolicy(MyAllowSpecificOrigins,
                 builder =>
                 {
-                    builder.WithOrigins("https://localhost:4200",
-                                        "192.168.1.3:4200")
+                    builder.WithOrigins("localhost:4200")
                                         .AllowAnyHeader()
-                                        .AllowAnyMethod();
+                                        .AllowAnyMethod()
+                                        .AllowAnyOrigin();
+                                        
+
                 });
             });
 

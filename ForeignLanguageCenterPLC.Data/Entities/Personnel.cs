@@ -76,7 +76,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         public string Note { get; set; }
 
-        public DateTime QuitDay { get; set; }
+        public DateTime QuitWorkDay { get; set; }
        
     }
 }

@@ -30,12 +30,15 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         [StringLength(500)]
         public string Address { get; set; }
 
+        // quốc gia
         [Required]
         public string Nationality { get; set; }
 
+        // tình trạng hôn nhân
         [Required]
         public int MarritalStatus { get; set; }
 
+        // kinh nghiệm
         public string ExperienceRecord { get; set; }
 
         public string Email { get; set; }
@@ -54,15 +57,19 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         [Required]
         public string Image { get; set; }
 
+        // lương cơ bản
         [Required]
         public decimal BasicSalary { get; set; }
 
+        // phụ cấp
         [Required]
         public decimal Allowance { get; set; }
 
+        // tiền thưởng
         [Required]
         public decimal Bonus { get; set; }
 
+        // tiền bảo hiểm
         [Required]
         public decimal InsurancePremium { get; set; }
 
@@ -76,6 +83,16 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         public string Note { get; set; }
 
-        public DateTime QuitDay { get; set; }
+        //ngày nghỉ việc
+        public DateTime QuitWorkDay { get; set; }
+
+
+        // giáo viên thỉnh giảng
+        [Required]
+        public bool IsVisitingLecturer { get; set; }
+
+        // trợ giảng
+        [Required]
+        public bool IsTutor { get; set; }
     }
 }

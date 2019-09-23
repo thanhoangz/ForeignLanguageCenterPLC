@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ForeignLanguageCenterPLC.Data.EF;
 using ForeignLanguageCenterPLC.Data.Entities;
+using Microsoft.AspNetCore.Cors;
 
 namespace ForeignLanguageCenterPLC.Controllers
 {
