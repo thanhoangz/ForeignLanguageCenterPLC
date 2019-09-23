@@ -3,6 +3,8 @@
     public enum Status
     {
         InActive,
-        Active
+        Active,
+        Stop,
+        Pause
     }
 }

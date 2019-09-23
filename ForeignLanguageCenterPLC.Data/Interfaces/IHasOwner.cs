@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ForeignLanguageCenterPLC.Infrastructure.Interfaces
 {
-    class IHasOwner
+    public class IHasOwner
     {
     }
 }

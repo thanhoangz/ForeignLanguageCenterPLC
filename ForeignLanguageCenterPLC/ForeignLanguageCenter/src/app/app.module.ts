@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HoSoHocVienComponent } from './ho-so-hoc-vien/ho-so-hoc-vien.component';
 import { LichocComponent } from './lichoc/lichoc.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { BaoCaoComponent } from './bao-cao/bao-cao.component';
@@ -15,6 +15,8 @@ import { NhanvienComponent } from './nhanvien/nhanvien.component';
 import { DanhsachlopComponent } from './danhsachlop/danhsachlop.component';
 import { LopComponent } from './danhsachlop/lop/lop.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
+import { AdminManagementComponent } from './admin/admin-management/admin-management.component';
 
 
 @NgModule({
@@ -27,16 +29,17 @@ import {MatTabsModule} from '@angular/material/tabs';
     NhanvienComponent,
     DanhsachlopComponent,
     LopComponent,
+    AdminManagementComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatTabsModule
+    MatTabsModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

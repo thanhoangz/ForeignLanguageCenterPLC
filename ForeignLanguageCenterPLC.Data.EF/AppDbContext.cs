@@ -13,7 +13,7 @@ using System.Text;
 
 namespace ForeignLanguageCenterPLC.Data.EF
 {
-    public class AppDbContext : IdentityDbContext<AppUser, AppRole, Guid>
+    public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions options) : base(options)
         {
@@ -24,8 +24,9 @@ namespace ForeignLanguageCenterPLC.Data.EF
         public DbSet<SystemConfig> SystemConfigs { get; set; }
         //public DbSet<Function> Functions { get; set; }
 
-        public DbSet<AppUser> AppUsers { get; set; }
-        public DbSet<AppRole> AppRoles { get; set; }
+        //public DbSet<AppUser> AppUsers { get; set; }
+        //public DbSet<AppRole> AppRoles { get; set; }
+        public DbSet<User> Users { get; set; }
         //public DbSet<Announcement> Announcements { set; get; }
         //public DbSet<AnnouncementUser> AnnouncementUsers { set; get; }
 

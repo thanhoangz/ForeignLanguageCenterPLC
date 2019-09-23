@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  issuer: 'http://localhost:5000',
+  imageDomain: 'http://192.168.1.6:8900',
+  catalogServicesDomain: 'http://10.159.13.195:8080',
+  orderServicesDomain: 'http://10.159.13.195:8081',
+  paymentServicesDomain: 'http://10.159.13.195:8082',
 };
 
 /*

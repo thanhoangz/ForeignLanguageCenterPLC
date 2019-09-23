@@ -15,6 +15,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace ForeignLanguageCenterPLC
 {
@@ -25,6 +26,8 @@ namespace ForeignLanguageCenterPLC
             Configuration = configuration;
         }
 
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -34,9 +37,9 @@ namespace ForeignLanguageCenterPLC
                             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
                             o => o.MigrationsAssembly("ForeignLanguageCenterPLC.Data.EF")));
 
-            services.AddIdentity<AppUser, AppRole>()
-                .AddEntityFrameworkStores<AppDbContext>()
-                .AddDefaultTokenProviders();
+            //services.AddIdentity<AppUser, AppRole>()
+            //    .AddEntityFrameworkStores<AppDbContext>()
+            //    .AddDefaultTokenProviders();
 
             // Configure Identity
 
@@ -57,8 +60,8 @@ namespace ForeignLanguageCenterPLC
                 options.User.RequireUniqueEmail = true;
             });
 
-            services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
-            services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+            //services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
+            //services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
 
             //services.AddTransient<IEmailSender, EmailSender>();
 
@@ -76,7 +79,24 @@ namespace ForeignLanguageCenterPLC
             });
 
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(MyAllowSpecificOrigins,
+                builder =>
+                {
+                    builder.WithOrigins("https://localhost:4200",
+                                        "192.168.1.3:4200")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                });
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            // Register the Swagger generator, defining 1 or more Swagger documents
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -93,10 +113,22 @@ namespace ForeignLanguageCenterPLC
                 app.UseHsts();
             }
 
+            app.UseCors(MyAllowSpecificOrigins);
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint.
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
