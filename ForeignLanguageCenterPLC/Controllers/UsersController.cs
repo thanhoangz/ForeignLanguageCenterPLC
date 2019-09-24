@@ -49,7 +49,7 @@ namespace ForeignLanguageCenterPLC.Controllers
         {
             if (id != user.Id)
             {
-                return BadRequest();
+                return BadRequest(); //400
             }
 
             _context.Entry(user).State = EntityState.Modified;
@@ -62,7 +62,7 @@ namespace ForeignLanguageCenterPLC.Controllers
             {
                 if (!UserExists(id))
                 {
-                    return NotFound();
+                    return NotFound();      // 404
                 }
                 else
                 {
@@ -70,18 +70,23 @@ namespace ForeignLanguageCenterPLC.Controllers
                 }
             }
 
-            return NoContent();
+            return NoContent(); //500
         }
 
         // POST: api/Users
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
+            user.DateCreated = DateTime.Now;
+            user.DateModified = DateTime.Now;
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
+
+
+        
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
