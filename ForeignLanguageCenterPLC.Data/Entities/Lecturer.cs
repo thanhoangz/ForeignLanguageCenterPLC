@@ -7,6 +7,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
+    /// <summary>
+    /// Giảng viên
+    /// </summary>
     [Table("Lecturers")]
     public class Lecturer : DomainEntity<int>, ISwitchable, IDateTracking
     {
@@ -78,6 +81,20 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         public DateTime DateModified { get; set; }
 
+        // tiền công giảng dạy với giáo viên
+        public decimal WageOfLecturer { get; set; }
+
+        // tiền công giảng dạy với trợ giảng
+        public decimal WageOfTutor { get; set; }
+
+        // giáo viên thỉnh giảng
+        [Required]
+        public bool IsVisitingLecturer { get; set; }
+
+        // trợ giảng
+        [Required]
+        public bool IsTutor { get; set; }
+
         [Required]
         public Status Status { get; set; }
 
@@ -87,12 +104,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public DateTime QuitWorkDay { get; set; }
 
 
-        // giáo viên thỉnh giảng
-        [Required]
-        public bool IsVisitingLecturer { get; set; }
+   
 
-        // trợ giảng
-        [Required]
-        public bool IsTutor { get; set; }
     }
 }

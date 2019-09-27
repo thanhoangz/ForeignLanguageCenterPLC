@@ -7,6 +7,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
+    /// <summary>
+    /// Đối tượng 
+    /// </summary>
     [Table("GuestTypes")]
     public class GuestType : DomainEntity<int>, ISwitchable, IDateTracking
     {
@@ -21,6 +24,8 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         [Required]
         public Status Status { get; set; }
+
+        public string Note { get; set; }
 
     }
 }

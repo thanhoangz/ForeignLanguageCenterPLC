@@ -9,6 +9,26 @@ namespace ForeignLanguageCenterPLC.Data.EF.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Courses",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(maxLength: 500, nullable: false),
+                    Price = table.Column<decimal>(nullable: false),
+                    Content = table.Column<string>(nullable: false),
+                    TraingTime = table.Column<string>(nullable: false),
+                    NumberOfSession = table.Column<int>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false),
+                    DateModified = table.Column<DateTime>(nullable: false),
+                    Status = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Courses", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "SystemConfigs",
                 columns: table => new
                 {
@@ -47,6 +67,9 @@ namespace ForeignLanguageCenterPLC.Data.EF.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Courses");
+
             migrationBuilder.DropTable(
                 name: "SystemConfigs");
 

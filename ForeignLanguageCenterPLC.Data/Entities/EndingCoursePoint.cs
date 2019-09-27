@@ -8,34 +8,31 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
     /// <summary>
-    /// Khóa học
+    /// Điểm kết thúc khóa học
     /// </summary>
-    [Table("Courses")]
-    public class Course: DomainEntity<int>, ISwitchable, IDateTracking
+    [Table("EndingCoursePoints")]
+    public class EndingCoursePoint : DomainEntity<int>, ISwitchable, IDateTracking
     {
-        [Required]
-        [MaxLength(500)]
-        public string Name { get; set; }
+
+        public decimal ListeningPoint { get; set; }
+
+        public decimal SayingPoint { get; set; }
+
+        public decimal WritingPoint { get; set; }
+
+        public decimal ReadingPoint { get; set; }
+
+        public decimal TotalPoint { get; set; }
+
+        public decimal AveragePoint { get; set; }
 
         [Required]
-        public decimal Price { get; set; }
-
-        [Required]
-        public string Content { get; set; }
-
-        [Required]
-        public string TraingTime { get; set; }
-
-        [Required]
-        public int NumberOfSession { get; set; }
+        public Status Status { get; set; }
 
         [Required]
         public DateTime DateCreated { get; set; }
 
         public DateTime DateModified { get; set; }
-
-        [Required]
-        public Status Status { get; set; }
 
         public string Note { get; set; }
     }

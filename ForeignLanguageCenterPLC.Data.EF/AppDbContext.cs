@@ -27,6 +27,8 @@ namespace ForeignLanguageCenterPLC.Data.EF
         //public DbSet<AppUser> AppUsers { get; set; }
         //public DbSet<AppRole> AppRoles { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Course> Courses { get; set; }
+
         //public DbSet<Announcement> Announcements { set; get; }
         //public DbSet<AnnouncementUser> AnnouncementUsers { set; get; }
 

@@ -7,6 +7,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
+    /// <summary>
+    /// Nhân viên
+    /// </summary>
     [Table("Personnels")]
     public class Personnel: DomainEntity<int>, ISwitchable, IDateTracking
     {
