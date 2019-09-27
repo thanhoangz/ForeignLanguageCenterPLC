@@ -44,8 +44,7 @@ namespace ForeignLanguageCenterPLC.Data.EF.Migrations
 
                     b.Property<int>("Status");
 
-                    b.Property<string>("TraingTime")
-                        .IsRequired();
+                    b.Property<int>("TraingTime");
 
                     b.HasKey("Id");
 

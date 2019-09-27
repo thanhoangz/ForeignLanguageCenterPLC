@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
@@ -42,5 +41,10 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public DateTime DateModified { get; set; }
 
         public string Note { get; set; }
+
+
+
+        /*List of References */
+        public virtual ICollection<StudyProcess> StudyProcesses { set; get; }
     }
 }

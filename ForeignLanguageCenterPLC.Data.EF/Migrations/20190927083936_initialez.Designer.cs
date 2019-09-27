@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ForeignLanguageCenterPLC.Data.EF.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20190926145757_initialize")]
-    partial class initialize
+    [Migration("20190927083936_initialez")]
+    partial class initialez
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -38,14 +38,15 @@ namespace ForeignLanguageCenterPLC.Data.EF.Migrations
                         .IsRequired()
                         .HasMaxLength(500);
 
+                    b.Property<string>("Note");
+
                     b.Property<int>("NumberOfSession");
 
                     b.Property<decimal>("Price");
 
                     b.Property<int>("Status");
 
-                    b.Property<string>("TraingTime")
-                        .IsRequired();
+                    b.Property<int>("TraingTime");
 
                     b.HasKey("Id");
 

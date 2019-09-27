@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ForeignLanguageCenterPLC.Data.EF.Migrations
 {
-    public partial class initialize : Migration
+    public partial class initialez : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -17,11 +17,12 @@ namespace ForeignLanguageCenterPLC.Data.EF.Migrations
                     Name = table.Column<string>(maxLength: 500, nullable: false),
                     Price = table.Column<decimal>(nullable: false),
                     Content = table.Column<string>(nullable: false),
-                    TraingTime = table.Column<string>(nullable: false),
+                    TraingTime = table.Column<int>(nullable: false),
                     NumberOfSession = table.Column<int>(nullable: false),
                     DateCreated = table.Column<DateTime>(nullable: false),
                     DateModified = table.Column<DateTime>(nullable: false),
-                    Status = table.Column<int>(nullable: false)
+                    Status = table.Column<int>(nullable: false),
+                    Note = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

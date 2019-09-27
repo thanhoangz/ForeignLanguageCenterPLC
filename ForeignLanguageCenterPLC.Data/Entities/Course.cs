@@ -24,7 +24,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public string Content { get; set; }
 
         [Required]
-        public string TraingTime { get; set; }
+        public int TraingTime { get; set; }
 
         [Required]
         public int NumberOfSession { get; set; }
