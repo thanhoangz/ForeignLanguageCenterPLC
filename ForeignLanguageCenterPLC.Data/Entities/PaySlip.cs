@@ -9,23 +9,23 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
     /// <summary>
-    /// Phiếu thu (Biên lai)
+    /// Phiếu chi (Phiếu xuất)
     /// </summary>
-    [Table("Receipts")]
-    public class Receipt : DomainEntity<string>, ISwitchable, IDateTracking
+    [Table("PaySlips")]
+    public class PaySlip : DomainEntity<string>, ISwitchable, IDateTracking
     {
+        /// <summary>
+        /// Nội dung chi
+        /// </summary>
         [Required]
-        [StringLength(250)]
-        public string NameOfPaymentApplicant { get; set; }
+        public string Content { get; set; }
 
-        [Required]
-        public string ForReason { get; set; }
+        public decimal Total { get; set; }
 
-        [Required]
-        public DateTime CollectionDate { get; set; }
+        public DateTime Date { get; set; }
 
-        [Required]
-        public decimal TotalAmount { get; set; }
+        public string Receiver { get; set; }
+
 
         [Required]
         public Status Status { get; set; }
@@ -37,10 +37,11 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         public string Note { get; set; }
 
+
         /* Foreign Key */
 
         [Required]
-        public int ReceiptTypeId { get; set; }
+        public int PaySlipTypeId { get; set; }
 
         /// <summary>
         /// Nhân viên tạo phiếu, chi trả
@@ -64,14 +65,15 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         [ForeignKey("SendPersonnelId")]
         public virtual Personnel SendPersonnel { get; set; }
 
+
+        [ForeignKey("PaySlipTypeId")]
+        public virtual PaySlipType PaySlipType { get; set; }
+
         [ForeignKey("UserId")]
         public virtual User User { get; set; }
 
-
-        [ForeignKey("ReceiptTypeId")]
-        public virtual ReceiptType ReceiptType { get; set; }
         /*List of References */
+        //public virtual ICollection<PaySlipType> PaySlips { set; get; }
 
-        public virtual ICollection<ReceiptDetail> ReceiptDetails { set; get; }
     }
 }

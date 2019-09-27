@@ -2,25 +2,33 @@
 using ForeignLanguageCenterPLC.Infrastructure.Interfaces;
 using ForeignLanguageCenterPLC.Infrastructure.SharedKernel;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
-    [Table("EndingCoursePointDetails")]
-    public class EndingCoursePointDetail : DomainEntity<int>, ISwitchable, IDateTracking, ISortable
+
+    public class PeriodicPointDetail : DomainEntity<int>, ISwitchable, IDateTracking
     {
-        public decimal ListeningPoint { get; set; }
+        [Required]
+        public decimal Point { get; set; }
 
-        public decimal SayingPoint { get; set; }
-
-        public decimal WritingPoint { get; set; }
-
-        public decimal ReadingPoint { get; set; }
-
-        public decimal TotalPoint { get; set; }
-
+        [Required]
         public decimal AveragePoint { get; set; }
+
+        /// <summary>
+        /// Sắp xếp theo điểm trung bình cộng các bài trước đến thời điểm hiện tại
+        /// </summary>
+        [Required]
+        public decimal SortedByAveragePoint { get; set; }
+
+        /// <summary>
+        /// Sắp xêp theo điểm bài thi hiện tại
+        /// </summary>
+        [Required]
+        public decimal SortedByPoint { get; set; }
 
         [Required]
         public Status Status { get; set; }
@@ -29,9 +37,8 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public DateTime DateCreated { get; set; }
 
         public DateTime DateModified { get; set; }
-
         public string Note { get; set; }
-        public int SortOrder { get; set; }
+
 
         /* Foreign Key */
         [Required]

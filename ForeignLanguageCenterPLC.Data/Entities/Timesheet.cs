@@ -120,5 +120,25 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public DateTime DateModified { get; set; }
 
         public string Note { get; set; }
+
+
+        /* Foreign Key */
+
+        [Required]
+        public int UserId { get; set; }
+
+        [Required]
+        public string PersonnelId { get; set; }
+
+        /*Reference Table*/
+
+        [ForeignKey("PersonnelId")]
+        public virtual Personnel Personnel { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+
+        /*List of References */
     }
 }

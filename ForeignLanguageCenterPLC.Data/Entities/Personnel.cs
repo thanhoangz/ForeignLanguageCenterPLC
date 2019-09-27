@@ -11,7 +11,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
     /// Nhân viên
     /// </summary>
     [Table("Personnels")]
-    public class Personnel: DomainEntity<int>, ISwitchable, IDateTracking
+    public class Personnel: DomainEntity<string>, ISwitchable, IDateTracking
     {
         public string CardId { get; set; }
 
@@ -80,6 +80,10 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public string Note { get; set; }
 
         public DateTime QuitWorkDay { get; set; }
-       
+
+
+        /* Foreign Key */
+        /*Reference Table*/
+        /*List of References */
     }
 }

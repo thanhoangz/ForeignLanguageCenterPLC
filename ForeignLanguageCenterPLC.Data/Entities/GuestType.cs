@@ -27,5 +27,9 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         public string Note { get; set; }
 
+        /* Foreign Key */
+        /*Reference Table*/
+        /*List of References */
+
     }
 }

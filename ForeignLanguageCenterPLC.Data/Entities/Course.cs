@@ -38,5 +38,9 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public Status Status { get; set; }
 
         public string Note { get; set; }
+
+        /* Foreign Key */
+        /*Reference Table*/
+        /*List of References */
     }
 }

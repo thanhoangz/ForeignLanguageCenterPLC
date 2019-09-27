@@ -43,8 +43,12 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public string Note { get; set; }
 
 
+        /* Foreign Key */
+        /*Reference Table*/
 
         /*List of References */
         public virtual ICollection<StudyProcess> StudyProcesses { set; get; }
+        public virtual ICollection<EndingCoursePoint> EndingCoursePoints { set; get; }
+        public virtual ICollection<PeriodicPoint> PeriodicPoints { set; get; }
     }
 }

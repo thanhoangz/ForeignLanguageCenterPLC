@@ -26,6 +26,10 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         /// </summary>
         public decimal WageOfTutor { get; set; }
 
+
+        /// <summary>
+        /// Ngày điểm danh
+        /// </summary>
         public DateTime Date { get; set; }
 
         [Required]
@@ -37,5 +41,37 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public DateTime DateModified { get; set; }
 
         public string Note { get; set; }
+
+        /* Foreign Key */
+
+        [Required]
+        public string LanguageClassId { get; set; }
+
+        [Required]
+        public int LecturerId { get; set; }
+
+        [Required]
+        public int TutorId { get; set; }
+
+        [Required]
+        public int UserId { get; set; }
+
+        /*Reference Table*/
+
+        [ForeignKey("LanguageClassId")]
+        public virtual LanguageClass LanguageClass { get; set; }
+
+        [ForeignKey("LecturerId")]
+        public virtual Lecturer Lecturer { get; set; }
+
+
+        [ForeignKey("TutorId")]
+        public virtual Lecturer Tutor { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+        /*List of References */
+        public virtual ICollection<AttendanceSheetDetail> AttendanceSheetDetails { set; get; }
     }
 }

@@ -27,5 +27,11 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public DateTime DateCreated { get; set; }
 
         public DateTime DateModified { get; set; }
+
+
+        /* Foreign Key */
+        /*Reference Table*/
+        /*List of References */
+        public virtual ICollection<EndingCoursePointDetail> EndingCoursePointDetails { set; get; }
     }
 }

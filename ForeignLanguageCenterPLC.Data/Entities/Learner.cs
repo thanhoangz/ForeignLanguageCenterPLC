@@ -60,8 +60,12 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         public DateTime DateModified { get; set; }
 
+        /* Foreign Key */
+        /*Reference Table*/
+
         /*List of References */
         public virtual ICollection<StudyProcess> StudyProcesses { set; get; }
-
+        public virtual ICollection<EndingCoursePointDetail> EndingCoursePointDetails { set; get; }
+        public virtual ICollection<PeriodicPointDetail> PeriodicPointDetails { set; get; }
     }
 }

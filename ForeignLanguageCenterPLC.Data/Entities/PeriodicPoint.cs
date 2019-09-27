@@ -2,6 +2,7 @@
 using ForeignLanguageCenterPLC.Infrastructure.Interfaces;
 using ForeignLanguageCenterPLC.Infrastructure.SharedKernel;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -38,6 +39,29 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public DateTime DateModified { get; set; }
 
         public string Note { get; set; }
-       
+
+
+
+        [Required]
+        public string LanguageClassId { get; set; }
+
+        [Required]
+        public int LecturerId { get; set; }
+
+        [Required]
+        public int UserId { get; set; }
+
+        /*Reference Table*/
+        [ForeignKey("LanguageClassId")]
+        public virtual LanguageClass LanguageClass { get; set; }
+
+        [ForeignKey("LecturerId")]
+        public virtual Lecturer Lecturer { get; set; }
+
+        [ForeignKey("UserId")]
+        public virtual User User { get; set; }
+
+        /*List of References */
+        public virtual ICollection<PeriodicPointDetail> PeriodicPointDetails { set; get; }
     }
 }

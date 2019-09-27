@@ -2,6 +2,7 @@
 using ForeignLanguageCenterPLC.Infrastructure.Interfaces;
 using ForeignLanguageCenterPLC.Infrastructure.SharedKernel;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -104,7 +105,11 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public DateTime QuitWorkDay { get; set; }
 
 
-   
 
+        /* Foreign Key */
+        /*Reference Table*/
+        /*List of References */
+        public virtual ICollection<EndingCoursePoint> EndingCoursePoints { set; get; }
+        public virtual ICollection<PeriodicPoint> PeriodicPoints { set; get; }
     }
 }

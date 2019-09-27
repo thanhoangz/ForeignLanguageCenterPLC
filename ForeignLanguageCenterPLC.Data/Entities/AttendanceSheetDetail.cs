@@ -2,20 +2,19 @@
 using ForeignLanguageCenterPLC.Infrastructure.Interfaces;
 using ForeignLanguageCenterPLC.Infrastructure.SharedKernel;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
     /// <summary>
-    /// Loại phiếu chi (Loại thanh toán)
+    /// Chi tiết điểm danh
     /// </summary>
-    [Table("TypeOfPayments")]
-    public class TypeOfPayment : DomainEntity<int>, ISwitchable, IDateTracking
+    [Table("AttendanceSheets")]
+    public class AttendanceSheetDetail : DomainEntity<int>, ISwitchable, IDateTracking
     {
-        [Required]
-        public string Name { get; set; }
-
         [Required]
         public Status Status { get; set; }
 
@@ -26,10 +25,22 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         public string Note { get; set; }
 
-
-
         /* Foreign Key */
+        [Required]
+        public string LearnerId { get; set; }
+
+        [Required]
+        public string LanguageClassId { get; set; }
+
+        [Required]
+        public int AttendanceSheetId { get; set; }
+
         /*Reference Table*/
+        [ForeignKey("LearnerId")]
+        public virtual Learner Learner { get; set; }
+
+        [ForeignKey("LanguageClassId")]
+        public virtual LanguageClass LanguageClass { get; set; }
         /*List of References */
     }
 }

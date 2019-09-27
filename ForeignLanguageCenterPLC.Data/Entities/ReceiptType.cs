@@ -2,16 +2,15 @@
 using ForeignLanguageCenterPLC.Infrastructure.Interfaces;
 using ForeignLanguageCenterPLC.Infrastructure.SharedKernel;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text;
 
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
-    /// <summary>
-    /// Loại phiếu chi (Loại thanh toán)
-    /// </summary>
-    [Table("TypeOfPayments")]
-    public class TypeOfPayment : DomainEntity<int>, ISwitchable, IDateTracking
+    [Table("ReceiptTypes")]
+    public class ReceiptType : DomainEntity<string>, ISwitchable, IDateTracking
     {
         [Required]
         public string Name { get; set; }
@@ -26,10 +25,8 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         public string Note { get; set; }
 
-
-
-        /* Foreign Key */
-        /*Reference Table*/
         /*List of References */
+
+        public virtual ICollection<Receipt> Receipts { set; get; }
     }
 }
