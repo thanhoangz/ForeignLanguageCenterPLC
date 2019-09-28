@@ -2,30 +2,32 @@
 using ForeignLanguageCenterPLC.Infrastructure.Interfaces;
 using ForeignLanguageCenterPLC.Infrastructure.SharedKernel;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
-    /// <summary>
-    /// Điểm kết thúc khóa học
-    /// </summary>
-    [Table("EndingCoursePoints")]
-    public class EndingCoursePoint : DomainEntity<int>, ISwitchable, IDateTracking
+    [Table("TeachingSchedules")]
+    public class TeachingSchedule : DomainEntity<int>, ISwitchable, IDateTracking
     {
-        /// <summary>
-        /// Ngày vào điểm
-        /// </summary>
         [Required]
-        public DateTime DateOnPoint { get; set; }
+        public DateTime FromDate { get; set; }
+
+        [Required]
+        public DateTime ToDate { get; set; }
+
 
         /// <summary>
-        /// Ngày tổ chức thi, kiểm tra
+        /// Ca học
+        /// </summary>
+        [StringLength(500)]
+        public string TimeShift { get; set; }
+
+        /// <summary>
+        /// Các ngày học trong tuần
         /// </summary>
         [Required]
-        public DateTime ExaminationDate { get; set; }
-
+        public string DaysOfWeek { get; set; }
 
         [Required]
         public Status Status { get; set; }
@@ -38,28 +40,24 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public string Note { get; set; }
 
         /* Foreign Key */
-
-        [Required]
-        public string LanguageClassId { get; set; }
-
         [Required]
         public int LecturerId { get; set; }
 
         [Required]
-        public int UserId { get; set; }
+        public int ClassRoomId { get; set; }
+
+        [Required]
+        public string LanguageClassId { get; set; }
 
         /*Reference Table*/
-        [ForeignKey("LanguageClassId")]
-        public virtual LanguageClass LanguageClass { get; set; }
 
         [ForeignKey("LecturerId")]
         public virtual Lecturer Lecturer { get; set; }
 
-        [ForeignKey("UserId")]
-        public virtual User User { get; set; }
+        [ForeignKey("ClassRoomId")]
+        public virtual ClassRoom ClassRoom { get; set; }
 
-        /*List of References */
-        public virtual ICollection<EndingCoursePointDetail> EndingCoursePointDetails { set; get; }
-
+        [ForeignKey("LanguageClassId")]
+        public virtual LanguageClass LanguageClass { get; set; }
     }
 }

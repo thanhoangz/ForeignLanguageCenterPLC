@@ -48,10 +48,11 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public string LanguageClassId { get; set; }
 
         [Required]
-        public int LecturerId { get; set; }
+        [ForeignKey(nameof(Lecturer)), Column(Order = 0)]
+        public int? LecturerId { get; set; }
 
-        [Required]
-        public int TutorId { get; set; }
+        [ForeignKey(nameof(Tutor)), Column(Order = 1)]
+        public int? TutorId { get; set; }
 
         [Required]
         public int UserId { get; set; }
@@ -61,11 +62,9 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         [ForeignKey("LanguageClassId")]
         public virtual LanguageClass LanguageClass { get; set; }
 
-        [ForeignKey("LecturerId")]
         public virtual Lecturer Lecturer { get; set; }
 
 
-        [ForeignKey("TutorId")]
         public virtual Lecturer Tutor { get; set; }
 
         [ForeignKey("UserId")]

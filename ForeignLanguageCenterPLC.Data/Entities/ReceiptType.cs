@@ -10,7 +10,7 @@ using System.Text;
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
     [Table("ReceiptTypes")]
-    public class ReceiptType : DomainEntity<string>, ISwitchable, IDateTracking
+    public class ReceiptType : DomainEntity<int>, ISwitchable, IDateTracking
     {
         [Required]
         public string Name { get; set; }

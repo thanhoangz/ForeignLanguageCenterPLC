@@ -45,14 +45,14 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public string LearnerId { get; set; }
 
         [Required]
-        public int EndingCoursePointId { get; set; }
+        public int PeriodicPointId { get; set; }
 
         /*Reference Table*/
         [ForeignKey("LearnerId")]
         public virtual Learner Learner { get; set; }
 
 
-        [ForeignKey("LanguageClassId")]
-        public virtual EndingCoursePoint EndingCoursePoint { get; set; }
+        [ForeignKey("PeriodicPointId")]
+        public virtual PeriodicPoint PeriodicPoint { get; set; }
     }
 }

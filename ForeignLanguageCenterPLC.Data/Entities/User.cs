@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace ForeignLanguageCenterPLC.Data.Entities
 {
@@ -32,6 +31,9 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         /* Foreign Key */
         /*Reference Table*/
         /*List of References */
-        public virtual ICollection<EndingCoursePointDetail> EndingCoursePointDetails { set; get; }
+        public virtual ICollection<EndingCoursePoint> EndingCoursePoints { set; get; }
+        public virtual ICollection<Receipt> Receipts { set; get; }
+        public virtual ICollection<Timesheet> Timesheets { set; get; }
+        public virtual ICollection<AttendanceSheet> AttendanceSheets { set; get; }
     }
 }

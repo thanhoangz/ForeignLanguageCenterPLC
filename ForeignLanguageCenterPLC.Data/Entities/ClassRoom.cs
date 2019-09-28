@@ -2,6 +2,7 @@
 using ForeignLanguageCenterPLC.Infrastructure.Interfaces;
 using ForeignLanguageCenterPLC.Infrastructure.SharedKernel;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -30,6 +31,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         /* Foreign Key */
         /*Reference Table*/
         /*List of References */
+        public virtual ICollection<TeachingSchedule> TeachingSchedules { set; get; }
 
     }
 }

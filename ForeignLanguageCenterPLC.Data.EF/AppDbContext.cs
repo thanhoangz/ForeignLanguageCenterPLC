@@ -20,44 +20,58 @@ namespace ForeignLanguageCenterPLC.Data.EF
 
         }
 
-        //public DbSet<Language> Languages { set; get; }
-        public DbSet<SystemConfig> SystemConfigs { get; set; }
-        //public DbSet<Function> Functions { get; set; }
+        public DbSet<AttendanceSheet> AttendanceSheets { set; get; }
 
-        //public DbSet<AppUser> AppUsers { get; set; }
-        //public DbSet<AppRole> AppRoles { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Course> Courses { get; set; }
+        public DbSet<AttendanceSheetDetail> AttendanceSheetDetails { set; get; }
 
-        //public DbSet<Announcement> Announcements { set; get; }
-        //public DbSet<AnnouncementUser> AnnouncementUsers { set; get; }
+        public DbSet<ClassRoom> ClassRooms { set; get; }
 
-        //public DbSet<Blog> Bills { set; get; }
-        //public DbSet<BillDetail> BillDetails { set; get; }
-        //public DbSet<Blog> Blogs { set; get; }
-        //public DbSet<BlogTag> BlogTags { set; get; }
-        //public DbSet<Color> Colors { set; get; }
-        //public DbSet<Contact> Contacts { set; get; }
-        //public DbSet<Feedback> Feedbacks { set; get; }
-        //public DbSet<Footer> Footers { set; get; }
-        //public DbSet<Page> Pages { set; get; }
-        //public DbSet<Product> Products { set; get; }
-        //public DbSet<ProductCategory> ProductCategories { set; get; }
-        //public DbSet<ProductImage> ProductImages { set; get; }
-        //public DbSet<ProductQuantity> ProductQuantities { set; get; }
-        //public DbSet<ProductTag> ProductTags { set; get; }
+        public DbSet<Contact> Contacts { set; get; }
 
-        //public DbSet<Size> Sizes { set; get; }
-        //public DbSet<Slide> Slides { set; get; }
+        public DbSet<Course> Courses { set; get; }
 
-        //public DbSet<Tag> Tags { set; get; }
+        public DbSet<EndingCoursePoint> EndingCoursePoints { set; get; }
 
-        //public DbSet<Permission> Permissions { get; set; }
-        //public DbSet<WholePrice> WholePrices { get; set; }
+        public DbSet<EndingCoursePointDetail> EndingCoursePointDetails { set; get; }
 
-        //public DbSet<AdvertistmentPage> AdvertistmentPages { get; set; }
-        //public DbSet<Advertistment> Advertistments { get; set; }
-        //public DbSet<AdvertistmentPosition> AdvertistmentPositions { get; set; }
+        public DbSet<Feedback> Feedbacks { set; get; }
+
+        public DbSet<Footer> Footers { set; get; }
+
+        public DbSet<GuestType> GuestTypes { set; get; }
+
+        public DbSet<LanguageClass> LanguageClasses { set; get; }
+
+        public DbSet<Learner> Learners { set; get; }
+
+        public DbSet<Lecturer> Lecturers { set; get; }
+
+        public DbSet<PaySlip> PaySlips { set; get; }
+
+        public DbSet<PaySlipType> PaySlipTypes { set; get; }
+
+        public DbSet<PeriodicPoint> PeriodicPoints { set; get; }
+
+        public DbSet<PeriodicPointDetail> PeriodicPointDetails { set; get; }
+
+        public DbSet<Personnel> Personnels { set; get; }
+
+        public DbSet<Receipt> Receipts { set; get; }
+
+        public DbSet<ReceiptDetail> ReceiptDetails { set; get; }
+
+        public DbSet<ReceiptType> ReceiptTypes { set; get; }
+
+        public DbSet<StudyProcess> StudyProcesses { set; get; }
+
+        public DbSet<SystemConfig> SystemConfigs { set; get; }
+
+        public DbSet<TeachingSchedule> TeachingSchedules { set; get; }
+
+        public DbSet<Timesheet> Timesheets { set; get; }
+
+        public DbSet<User> Users { set; get; }
+
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

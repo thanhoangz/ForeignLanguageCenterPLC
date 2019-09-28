@@ -61,11 +61,19 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public DateTime DateModified { get; set; }
 
         /* Foreign Key */
+        [Required]
+        public int GuestTypeId { get; set; }
+
         /*Reference Table*/
+        [ForeignKey("GuestTypeId")]
+        public virtual GuestType GuestType { get; set; }
 
         /*List of References */
         public virtual ICollection<StudyProcess> StudyProcesses { set; get; }
         public virtual ICollection<EndingCoursePointDetail> EndingCoursePointDetails { set; get; }
         public virtual ICollection<PeriodicPointDetail> PeriodicPointDetails { set; get; }
+        public virtual ICollection<TeachingSchedule> TeachingSchedules { set; get; }
+        public virtual ICollection<Receipt> Receipts { set; get; }
+        public virtual ICollection<AttendanceSheetDetail> AttendanceSheetDetails { set; get; }
     }
 }

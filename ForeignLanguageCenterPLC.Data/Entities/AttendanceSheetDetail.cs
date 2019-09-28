@@ -12,7 +12,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
     /// <summary>
     /// Chi tiết điểm danh
     /// </summary>
-    [Table("AttendanceSheets")]
+    [Table("AttendanceSheetDetails")]
     public class AttendanceSheetDetail : DomainEntity<int>, ISwitchable, IDateTracking
     {
         [Required]
@@ -29,7 +29,6 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         [Required]
         public string LearnerId { get; set; }
 
-        [Required]
         public string LanguageClassId { get; set; }
 
         [Required]
@@ -41,6 +40,9 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         [ForeignKey("LanguageClassId")]
         public virtual LanguageClass LanguageClass { get; set; }
+
+        [ForeignKey("AttendanceSheetId")]
+        public virtual AttendanceSheet AttendanceSheet { get; set; }
         /*List of References */
     }
 }

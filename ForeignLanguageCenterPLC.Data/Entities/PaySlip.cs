@@ -47,11 +47,14 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         /// Nhân viên tạo phiếu, chi trả
         /// </summary>
         [Required]
+        [ForeignKey(nameof(Personnel)), Column(Order = 0)]
         public string PersonnelId { get; set; }
 
         /// <summary>
         /// Nhân viên nhận chi trả (nếu có)
         /// </summary>
+        /// 
+        [ForeignKey(nameof(SendPersonnel)), Column(Order = 1)]
         public string SendPersonnelId { get; set; }
 
         [Required]
@@ -59,10 +62,10 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         /*Reference Table*/
 
-        [ForeignKey("PersonnelId")]
+
         public virtual Personnel Personnel { get; set; }
 
-        [ForeignKey("SendPersonnelId")]
+
         public virtual Personnel SendPersonnel { get; set; }
 
 
@@ -73,7 +76,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public virtual User User { get; set; }
 
         /*List of References */
-        //public virtual ICollection<PaySlipType> PaySlips { set; get; }
+
 
     }
 }

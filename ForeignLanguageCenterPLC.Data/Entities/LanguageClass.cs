@@ -50,5 +50,9 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public virtual ICollection<StudyProcess> StudyProcesses { set; get; }
         public virtual ICollection<EndingCoursePoint> EndingCoursePoints { set; get; }
         public virtual ICollection<PeriodicPoint> PeriodicPoints { set; get; }
+        public virtual ICollection<TeachingSchedule> TeachingSchedules { set; get; }
+        public virtual ICollection<ReceiptDetail> ReceiptDetails { set; get; }
+        public virtual ICollection<AttendanceSheet> AttendanceSheets { set; get; }
+        public virtual ICollection<AttendanceSheetDetail> AttendanceSheetDetails { set; get; }
     }
 }

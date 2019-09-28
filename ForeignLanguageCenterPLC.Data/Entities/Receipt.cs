@@ -48,10 +48,6 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         [Required]
         public string PersonnelId { get; set; }
 
-        /// <summary>
-        /// Nhân viên nhận chi trả (nếu có)
-        /// </summary>
-        public string SendPersonnelId { get; set; }
 
         [Required]
         public int UserId { get; set; }
@@ -61,8 +57,6 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         [ForeignKey("PersonnelId")]
         public virtual Personnel Personnel { get; set; }
 
-        [ForeignKey("SendPersonnelId")]
-        public virtual Personnel SendPersonnel { get; set; }
 
         [ForeignKey("UserId")]
         public virtual User User { get; set; }

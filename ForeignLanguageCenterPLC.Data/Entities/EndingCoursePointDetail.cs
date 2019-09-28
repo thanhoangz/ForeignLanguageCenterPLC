@@ -45,7 +45,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         public virtual Learner Learner { get; set; }
 
 
-        [ForeignKey("LanguageClassId")]
+        [ForeignKey("EndingCoursePointId")]
         public virtual EndingCoursePoint EndingCoursePoint { get; set; }
     }
 }

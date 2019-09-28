@@ -46,7 +46,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         /* Foreign Key */
         [Required]
-        public int LanguageClassId { get; set; }
+        public string LanguageClassId { get; set; }
 
         [Required]
         public string ReceiptId { get; set; }
