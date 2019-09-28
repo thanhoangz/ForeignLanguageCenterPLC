@@ -27,6 +27,8 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         /// Các ngày học trong tuần
         /// </summary>
         [Required]
+
+        [StringLength(500)]
         public string DaysOfWeek { get; set; }
 
         [Required]

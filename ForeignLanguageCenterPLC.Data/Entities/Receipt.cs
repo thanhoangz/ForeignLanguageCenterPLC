@@ -15,7 +15,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
     public class Receipt : DomainEntity<string>, ISwitchable, IDateTracking
     {
         [Required]
-        [StringLength(250)]
+        [StringLength(100)]
         public string NameOfPaymentApplicant { get; set; }
 
         [Required]

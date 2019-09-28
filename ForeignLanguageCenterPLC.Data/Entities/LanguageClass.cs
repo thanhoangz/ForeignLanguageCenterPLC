@@ -15,6 +15,8 @@ namespace ForeignLanguageCenterPLC.Data.Entities
     public class LanguageClass : DomainEntity<string>, ISwitchable, IDateTracking
     {
         [Required]
+
+        [StringLength(200)]
         public string Name { get; set; }
 
         [Required]

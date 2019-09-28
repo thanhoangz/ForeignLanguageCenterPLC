@@ -24,6 +24,8 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         public DateTime Date { get; set; }
 
+
+        [StringLength(200)]
         public string Receiver { get; set; }
 
 

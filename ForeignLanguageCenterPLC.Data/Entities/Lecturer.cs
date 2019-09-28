@@ -14,14 +14,15 @@ namespace ForeignLanguageCenterPLC.Data.Entities
     [Table("Lecturers")]
     public class Lecturer : DomainEntity<int>, ISwitchable, IDateTracking
     {
+        [StringLength(100)]
         public string CardId { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(50)]
         public string FirstName { get; set; }
 
         [Required]
-        [StringLength(100)]
+        [StringLength(50)]
         public string LastName { get; set; }
 
         [Required]
@@ -36,6 +37,7 @@ namespace ForeignLanguageCenterPLC.Data.Entities
 
         // quốc gia
         [Required]
+        [StringLength(100)]
         public string Nationality { get; set; }
 
         // tình trạng hôn nhân
@@ -45,8 +47,11 @@ namespace ForeignLanguageCenterPLC.Data.Entities
         // kinh nghiệm
         public string ExperienceRecord { get; set; }
 
+        [StringLength(200)]
         public string Email { get; set; }
 
+
+        [StringLength(200)]
         public string Facebook { get; set; }
 
         [Column(TypeName = "VARCHAR(16)")]
